@@ -43,7 +43,7 @@
 
 - 포스터를 하나 만든후
 
-`
+```
 ---
 layout: post
 title:  "포스터 이름"
@@ -51,7 +51,8 @@ date:   "시간" +0900
 categories: jekyll update
 comments: true
 ---
-`
+```
+
 
 - layout은 포스터 형태 title은 포스터 이름 data는 시간 categories는 jekyll comments는 댓글 기능을 활성화 하기위한 true
 
