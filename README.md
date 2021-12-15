@@ -1,195 +1,60 @@
-# Monophase <!-- omit in toc -->
+# 소프트웨어학부 20213039 이상진 <!-- omit in toc -->
 
-Monophase is *a one-column minimal responsive Jekyll blog theme*.
+- git허브 이름을 <username>.github.io 를 하면 자동으로 블로그용 깃허브로 인식
+- git clone <주소>를 통해 repositories를 클론
 
-One of the purposes of Monophase is to be an alternative option to the default theme of Jekyll—[Minima](https://github.com/jekyll/minima). Monophase is still keeping minimal, but meanwhile, more beautiful and mellow, and doesn't lose some useful basic features, such as archive.
+![Screenshot](clone.png)
 
-Check the *[live demo](https://zivlog.io/monophase/)*.
+- index.html 실험 해봄
 
-![Screenshot Light](screenshot-light.png)
-![Screenshot Dark](screenshot-dark.png)
+- 기존 index.html 삭제후 jekyll new . --force 명령어를 통해 블로그 형식 틀 만들기
 
-## Highlight Features <!-- omit in toc -->
+## git push하는 방법 <!-- omit in toc -->
 
-- [Normalize.css](https://github.com/necolas/normalize.css)
-- [Open Color](https://github.com/yeun/open-color)
-- [Font Awesome](https://fontawesome.com/)
-- [Disqus](https://disqus.com/)
-- [MathJax](https://www.mathjax.org/)
-- [Google Analytics 4](https://support.google.com/analytics/answer/10089681?hl=en)
-- [Jekyll Feed](https://github.com/jekyll/jekyll-feed/)
-- [Jekyll Paginate](https://github.com/jekyll/jekyll-paginate)
-- [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag/)
-- Related posts (time-based, because Jekyll) below each post
-- Dark mode, via [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
-- Archive implemented by pure [Liquid](https://shopify.github.io/liquid/)
+- 먼저 git add <이름 or 주소> 를 넣어 해당 내용 추가
 
-## Table of Contents <!-- omit in toc -->
+- git commit 으로 커밋내용 남기기
 
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Global Configuration](#global-configuration)
-  - [Post Configuration](#post-configuration)
-  - [Homepage](#homepage)
-  - [Custom Head](#custom-head)
-  - [Navigation](#navigation)
-  - [Social Links](#social-links)
-  - [Alert Messages](#alert-messages)
-  - [Alignment](#alignment)
-  - [Google Analytics 4](#google-analytics-4)
-  - [Archive](#archive)
-- [Contributing](#contributing)
-- [Development](#development)
-- [License](#license)
+- git push origin main 를 이용해 main 브랜치에 넣기
 
-## Installation
+## 테마 적용하기 <!-- omit in toc -->
 
-Add this line to your Jekyll site's `Gemfile`:
+- 테마 사이트 http://jekyllthemes.org/에 접속해서 테마 찾기
 
-```ruby
-gem "monophase"
-```
+- Monophase라는 테마를 찾음 (http://jekyllthemes.org/themes/monophase/)
 
-And add this line to your Jekyll site's `_config.yml`:
+- 깃허브 주소를 클론해 테마를 다운후 적당히 덮어쓰기해서 적용 시킴
 
-```yaml
-theme: monophase
-```
+![Screenshot](themescreen.png)
 
-And then execute:
+## 댓글 적용하기 <!-- omit in toc -->
 
-```shell
-bundle
-```
+- DISQUS 사이트 아이디를 만든 후 영상대로 진행
 
-Or install it yourself as:
+- 적용은 했지만 오류가 떠서 댓글 기능을 못씀
 
-```shell
-gem install monophase
-```
+![Screenshot](Commente.png)
 
-You can also install the latest code via [`jekyll-remote-theme`](https://github.com/benbalter/jekyll-remote-theme):
+- 영상 찾아보고, 사이트 Q&A를 봐도 해결방법을 모르겠음
 
-1. Add this line to your Jekyll site's `Gemfile`:
+## 포스터 작성하기 <!-- omit in toc -->
 
-    ```ruby
-    gem "jekyll-remote-theme"
-    ```
+- 테스트 포스터 2개를 작성했으니 이걸 위주로 수업에 배운 내용에 관해 작성
 
-2. Add these lines to your Jekyll site's `_config.yml`:
+- 포스터를 하나 만든후
 
-    ```ruby
-    plugins:
-      - jekyll-remote-theme
-
-    remote_theme: zivhub/monophase@main
-    ```
-
-## Usage
-
-### Global Configuration
-
-| Variable | Type | Default | Specification |
-| -------- | ---- | ------- | ------------- |
-| `title` | String | --- | The title of the website |
-| `tagline` | String | --- | The tagline of the website |
-| `lang` | String | `en` | The language of pages; The value can be overwritten by the `lang` variable on each page |
-| `author.name` | String | --- | The name of the website author |
-| `author.url` | String | --- | A URL of the website author |
-| `tags_path` | String | --- | A path to the archive-by-tags page; It is used by tags on each post |
-| `categories_path` | String | --- | A path to the archive-by-categories page; It is used by categories on each post |
-| `disqus` | String | --- | Disqus short name |
-| `google_analytics` | String | --- | Google Analytics 4 Measurement ID |
-
-### Post Configuration
-
-| Variable | Type | Default | Specification |
-| -------- | ---- | ------- | ------------- |
-| `description` | String | --- | A description of the current post |
-| `last_modified_at` | String | --- | The date of the last modification you made on a post after its publishing |
-| `author` | String or Array | --- | The author name(s) of the post |
-| `comments` | Boolean | `true` | Does enable the Disqus comment system |
-| `math` | Boolean | `false` | Does enable MathJax on this page |
-
-### Homepage
-
-You can create a homepage for your blog by setting `layout: home` in your `index.html`.
-
-### Custom Head
-
-Monophase leaves a placeholder to allow defining custom head. All you need to do is putting data into `_includes/custom-head.html`, and they would be automatically included in `<head>`.
-
-### Navigation
-
-The navigation bar of Monophase is configurable. You just need to specify titles and URLs in the file `_data/navigation.yml`, for example,
-
-```yml
-- title: About
-  url: /about/
-- title: Archive
-  url: /archive/
-- title: Categories
-  url: /categories/
-```
-
-### Social Links
-
-Monophase allows you to show social links on the website. All you need to do is creating a file `_data/social.yml`, for example,
-
-```yml
-- title: Email
-  url: mailto:zivmsg@gmail.com
-  icon: fas fa-envelope
-- title: Twitter
-  url: https://twitter.com/zivtwt
-  icon: fab fa-twitter
-- title: GitHub
-  url: https://github.com/zivhub
-  icon: fab fa-github
-```
-
-### Alert Messages
-
-Monophase provides some predefined classes to specify different levels of **alert messages**. In order of tone from light to heavy, they are: `message-info`, `message-warning`, and `message-danger`. You may add it to single elements like a `<p>`, or to a parent if there are multiple elements to show.
-
-### Alignment
-
-Monophase also provides some predefined classes to specify the alignment of HTML elements—e.g. images. They are `align-center`, `align-left`, and `align-right`.
-
-### Google Analytics 4
-
-To enable [Google Analytics 4](https://support.google.com/analytics/answer/10089681?hl=en), you just need to set the [Measurement ID](https://support.google.com/analytics/answer/7372977?hl=en) in your `_config.yml`, for example,
-
-```yml
-google_analytics: G-XXXXXXX
-```
-
-### Archive
-
-Monophase provides some built-in archive pages. It is implemented in pure Liquid. If you want to archive posts by years, you can create a page and put these code in it:
-
-```yml
+`
 ---
-layout: archive
-type: years
+layout: post
+title:  "포스터 이름"
+date:   "시간" +0900
+categories: jekyll update
+comments: true
 ---
-```
+`
 
-Similarly, if you want to archive posts by categories or tags, you can set the `type` property as `categories` or `tags`.
+- layout은 포스터 형태 title은 포스터 이름 data는 시간 categories는 jekyll comments는 댓글 기능을 활성화 하기위한 true
 
-## Contributing
+- comments가 없거나 false면 댓글 그 포스터는 댓글 기능 X
 
-Bug reports and pull requests are welcome on GitHub at [https://github.com/zivhub/monophase](https://github.com/zivhub/monophase). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `monophase.gemspec` accordingly.
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+# 지금까지 블로그 만들기였습니다. 감사합니다!
